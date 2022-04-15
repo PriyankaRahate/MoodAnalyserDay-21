@@ -7,17 +7,18 @@ import moodAnalyserDay21.MoodAnalyser;
 import org.junit.Assert;
 
 public class MoodAnalyserTest {
-    MoodAnalyser moodAnalyser = new MoodAnalyser();
 
     @Test
     public void givenMessage_WhenSad_ShouldReturnSad() {
-        String mood = moodAnalyser.analyseMood("I am in sad mood");
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in sad mood");
+        String mood = moodAnalyser.analyseMood();
         Assert.assertEquals("Sad", mood);
     }
 
     @Test
     public void givenMessage_WhenHappy_ShouldReturnHappy(){
-        String mood = moodAnalyser.analyseMood("I am in any mood");
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in any mood");
+        String mood = moodAnalyser.analyseMood();
         Assert.assertEquals("Happy",mood);
     }
 }
